@@ -1,0 +1,10 @@
+// File: _layout.scss
+// Contains all the CSS that handles the layout, such as the container and any grid systems.
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
