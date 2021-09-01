@@ -13,21 +13,54 @@ body {
 
 .header {
   width: 100%;
-  height: 15vh;
+  height: 3rem;
   background-color: hsl(0, 0%, 10%);
   color: hsl(0, 0%, 100%);
 }
 
 .main {
   width: 100%;
-  height: 80vh;
+  min-height: calc(100vh - 3rem);
   background-color: hsl(0, 0%, 15%);
   color: hsl(0, 0%, 100%);
 }
 
 .footer {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8rem;
   width: 100%;
-  height: 5vh;
   background-color: hsl(0, 0%, 10%);
   color: hsl(0, 0%, 100%);
+  .footerNav {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    .footerNavSection {
+      margin-right: 5rem;
+      li {
+        margin-top: 1rem;
+        list-style: none;
+        a {
+          color: hsl(0, 0%, 90%);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .copy {
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+  }
+  .socialLinks {
+    text-align: right;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    a {
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      color: hsl(200, 100%, 50%);
+    }
+  }
 }
