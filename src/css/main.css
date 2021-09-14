@@ -1,14 +1,24 @@
 .App {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -16,21 +26,31 @@ body {
 }
 
 .header {
+  position: -webkit-sticky;
   position: sticky;
   z-index: 5;
   top: 0;
   width: 100%;
   height: 3rem;
+  background: -webkit-gradient(linear, left top, right top, from(#8e1733), to(#0e4378));
   background: linear-gradient(90deg, #8e1733, #0e4378);
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 .header .headerLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -38,9 +58,13 @@ body {
   position: fixed;
   left: -100%;
   top: 3rem;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 19.5%;
   text-align: center;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   z-index: 9;
   background-color: #8e1733;
@@ -52,7 +76,8 @@ body {
 }
 
 .header .headerLeft .navigation.active li {
-  transition-delay: 2s;
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
 }
 
 .header .headerLeft .navigation ul {
@@ -91,6 +116,7 @@ body {
   width: 25px;
   height: 3px;
   margin: 4px 0;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: whitesmoke;
 }
@@ -100,11 +126,13 @@ body {
 }
 
 .header .headerLeft .hamburger.active .bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  -webkit-transform: translateY(7px) rotate(45deg);
+          transform: translateY(7px) rotate(45deg);
 }
 
 .header .headerLeft .hamburger.active .bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  -webkit-transform: translateY(-7px) rotate(-45deg);
+          transform: translateY(-7px) rotate(-45deg);
 }
 
 .header .headerLeft .logoAndTitle a {
@@ -132,14 +160,22 @@ body {
 }
 
 .main .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main .flex .poster {
-  object-fit: contain;
-  height: 25rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
 }
 
 .main {
@@ -155,6 +191,7 @@ body {
 
 .main .slideshowSlider {
   white-space: nowrap;
+  -webkit-transition: ease 1000ms;
   transition: ease 1000ms;
 }
 
@@ -188,29 +225,67 @@ body {
 
 .post {
   background-color: #242424;
-  width: 49vw;
+  width: 100vw;
 }
 
 .post:nth-child(1) {
-  width: 20vw;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+@media screen and (min-width: 425px) {
+  .main .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .post {
+    width: 70vw;
+  }
+  .post:nth-child(1) {
+    width: 25vw;
+  }
+  .seat-list .seat {
+    margin-right: 0.25vw;
+  }
 }
 
 .seat-list {
-  margin: 100px auto;
+  padding-top: 1rem;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  width: 28vw;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70vw;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .seat {
-  width: 60px;
-  height: 60px;
-  margin: 3px;
+  -ms-flex-preferred-size: 11.11111%;
+      flex-basis: 11.11111%;
+  min-height: 45px;
+  max-height: 60px;
+  margin: 2px;
 }
 
 .free {
@@ -247,11 +322,14 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .myButton {
-  box-shadow: inset 0px 0px 15px 3px #23395e;
+  -webkit-box-shadow: inset 0px 0px 15px 3px #23395e;
+          box-shadow: inset 0px 0px 15px 3px #23395e;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #2e466e), to(#415989));
   background: linear-gradient(to bottom, #2e466e 5%, #415989 100%);
   background-color: #2e466e;
   border-radius: 17px;
@@ -267,6 +345,7 @@ body {
 }
 
 .myButton:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #415989), to(#2e466e));
   background: linear-gradient(to bottom, #415989 5%, #2e466e 100%);
   background-color: #415989;
 }
@@ -288,8 +367,12 @@ body {
   margin-bottom: 2rem;
   margin-top: 2rem;
   margin-left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .footer .footerNav .footerNavSection {

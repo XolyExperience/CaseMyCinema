@@ -16,7 +16,7 @@ export default function Movie(props) {
     const [ticket, setTicket] = useState([ticketBase]);
     const [seats, setSeats] = useState([]);
     const [choosenDate, setChoosenDate] = useState([shows[0].date]);
-    const [selectedSeats, setSelectedSeats] = useState([]);
+    const [selectedSeats, setSelectedSeats] = useState([{ seat: "1" }]);
 
     const chooseDate = (date, idx) => {
         setChoosenDate(date);
@@ -43,16 +43,32 @@ export default function Movie(props) {
         }
     };
 
-    function addTicketInfo() {
+    function addSeats() {
+        console.log("Adding seats");
         seats.map((seat, idx) => {
             if (seat === "newly-booked") {
-                setSelectedSeats((selectedSeats) => [...selectedSeats, idx++]);
+                setSelectedSeats((selectedSeats) => [
+                    ...selectedSeats,
+                    { seat: `${idx + 1}` },
+                ]);
+                console.log("added seat ", idx + 1);
             }
         });
+        console.log("Seats added", selectedSeats);
+    }
+    const addTicketInfo = () => {
         setTicket((ticket) => [...ticket, { movie: name }]);
         setTicket((ticket) => [...ticket, { show: choosenDate }]);
         setTicket((ticket) => [...ticket, { seats: selectedSeats }]);
         console.log(ticket);
+        alertTicket();
+    };
+
+    function alertTicket() {
+        console.log(ticket);
+        alert(
+            `Your ticket! \n Booking-number: ${ticket.id} \n Movie: ${ticket.movie} \n Date: ${ticket.show} \n Seats: ${ticket.seats}`
+        );
     }
 
     return (
@@ -102,7 +118,9 @@ export default function Movie(props) {
                 <div className="center">
                     <button
                         className="myButton"
+                        // onMouseOver={addSeats}
                         onClick={() => {
+                            addSeats();
                             addTicketInfo();
                         }}
                     >
